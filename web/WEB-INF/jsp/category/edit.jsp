@@ -1,11 +1,20 @@
 <%@include file="../includes/header.jsp"%>
-<h1> Edit Category</h1>
-<form method="post">
-    <label>  Category Name </label><input type="text" name="name"value="${category.name}"/><br>
-    <label><input type="radio" name="status" value="1"<c:if test="${category.status}">checked="checked"</c:if>>Active</label>
-    <label><input type="radio" name="status" value="0"<c:if test="${!category.status}">checked="checked"</c:if>>InActive</label><br>
-    <input type="submit" value="Update"/><br>
-    <a href="${SITE_URL}/category">Back</a>
-</form>
+<div class="container">
+    <h1 class="lead"> Edit Category</h1>
+
+    <form>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" value="${category.name}">
+        </div>
+        <div class="form-group">
+            <label class="radio-inline"><input type="radio" name="status" <c:if test="${category.status}">checked="checked"</c:if>/>Active</label>
+            <label class="radio-inline"><input type="radio" name="status" <c:if test="${!category.status}">checked="checked"</c:if>/>Inactive</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+            <a href="${SITE_URL}/category">Back</a>
+        </form>
+        
+</div>
 </body>
 </html>
